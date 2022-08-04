@@ -1,7 +1,7 @@
 import { Switch, Route } from "react-router-dom";
 
-import LoginPage from "../pages/LoginPage";
-import HomePage from "../pages/HomePage";
+import LoginPage from "../LoginPage";
+import HomePage from "../HomePage";
 
 function LoginContainer() {
   return (

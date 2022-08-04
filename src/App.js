@@ -1,8 +1,13 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./styles.scss";
-import LoginContainer from "./components/auth/LoginContainer";
-import DefaultContainer from "./components/auth/DefaultContainer";
+import LoginContainer from "./components/pages/auth/LoginContainer";
+import DefaultContainer from "./components/pages/auth/DefaultContainer";
+
+/*
+createContext
+useState, useReducer
+*/
 
 function App() {
   return (
