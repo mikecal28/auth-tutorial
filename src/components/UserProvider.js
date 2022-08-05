@@ -11,11 +11,30 @@ function UserProvider({ children }) {
   const [user, setUser] = useState(null);
   const [authIsLoading, setAuthIsLoading] = useState(true);
 
+  function logout() {
+    fetch("https://devpipeline-mock-api.herokuapp.com/api/auth/logout", {
+      credentials: "include",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.message === "Logged out") {
+          setUser(null);
+          history.push("/login");
+        }
+        setAuthIsLoading(false);
+      })
+      .catch((err) => {
+        console.error("Logout Error: ", err);
+        setAuthIsLoading(false);
+      });
+  }
+
   const userState = {
     user,
     setUser,
     authIsLoading,
     setAuthIsLoading,
+    logout,
   };
 
   useEffect(() => {
